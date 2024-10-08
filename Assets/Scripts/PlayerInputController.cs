@@ -3,11 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputController : GameController
 {
-    private Camera _camera;
+    private Camera camera;
 
     private void Awake()
     {
-        _camera = Camera.main; //  에임 시스템에 참고하고 나중에 카메라 붙여줄 것
+        camera = Camera.main; //  에임 시스템에 참고하고 나중에 카메라 붙여줄 것
     }
 
     public void OnMove(InputValue value)
@@ -18,7 +18,7 @@ public class PlayerInputController : GameController
     public void OnLook(InputValue value) 
     {
         Vector2 newAim = value.Get<Vector2>();
-        Vector2 worldPos = _camera.ScreenToWorldPoint(newAim);
+        Vector2 worldPos = camera.ScreenToWorldPoint(newAim);
         newAim = (worldPos - (Vector2)transform.position).normalized;
         CollLookEvent(newAim);
     }
