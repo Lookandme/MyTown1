@@ -11,7 +11,6 @@ public class CameraObject : MonoBehaviour
 
     private void Awake()
     {
-       tagetTransform = Taget.GetComponent<Transform>();
         thisTrnansform = GetComponent<Transform>();
 
         followSpeed = 4.0f;
@@ -22,10 +21,18 @@ public class CameraObject : MonoBehaviour
 
     private void Update()
     {
+        if(Taget == null)return;
+
         thisTrnansform.position =  Vector2.Lerp(thisTrnansform.position, tagetTransform.position, followSpeed * Time.deltaTime);
         thisTrnansform.Translate(0,0, cameraRotationZ);
     }
-    
+    public void SetTaget(GameObject taget)
+    {
+        Taget = taget;
+        tagetTransform = Taget.GetComponent<Transform>();
+
+    }
+
 
 }
 
