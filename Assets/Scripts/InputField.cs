@@ -9,7 +9,9 @@ using UnityEditor.SceneManagement;
 public class InputFeld : MonoBehaviour
 {
     public TMP_InputField playerNameInput;
+    public PlayerPrefs playerPrefs;
     private string playerName;
+
    
 
 
@@ -32,8 +34,12 @@ public class InputFeld : MonoBehaviour
     private void LoadMainMap()
     {
         playerName = playerNameInput.text;
+        PlayerPrefs.SetString("playerName",playerName);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("MainMap");
        
 
     }
+
+    
 }

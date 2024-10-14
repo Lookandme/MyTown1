@@ -21,7 +21,7 @@ public class CameraObject : MonoBehaviour
 
     private void Update()
     {
-        if(Taget == null)return;
+        if(Taget == null) return;
 
         thisTrnansform.position =  Vector2.Lerp(thisTrnansform.position, tagetTransform.position, followSpeed * Time.deltaTime);
         thisTrnansform.Translate(0,0, cameraRotationZ);

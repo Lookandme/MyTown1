@@ -3,12 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Player1
+  - Player2
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - BackGround
   - Water
   - UI
   - 
@@ -41,12 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Layer 1
+  - name: BackGround
     uniqueID: 2425651459
     locked: 0
   - name: Layer 2
     uniqueID: 4250941897
     locked: 0
-  - name: Layer 3
+  - name: UI
     uniqueID: 4189426099
     locked: 0
