@@ -9,7 +9,7 @@ using static DataManager;
 public class SelectCharacter : MonoBehaviour
 {
     public Character character;
-    public Image image;
+    
    
 
     
@@ -18,7 +18,7 @@ public class SelectCharacter : MonoBehaviour
     void Start()
     {
         
-      image = GetComponent<Image>();
+      
         
 
         
@@ -28,21 +28,11 @@ public class SelectCharacter : MonoBehaviour
     {
         DataManager.instance.currentCharacter = character;
 
-        if (DataManager.instance.currentCharacter != character) DeSelectedColor();
-        else SelectedColor();
+       
 
     }
 
-    private void DeSelectedColor()
-    {
-        image.color = new Color(0.5f, 0.5f, 0.5f);
-    }
-
-    private void SelectedColor()
-    {
-        image.color = new Color(1f,1f,1f);
-        
-    }
+   
 
    
 }
